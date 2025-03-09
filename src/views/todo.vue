@@ -1,43 +1,39 @@
 <script setup lang="ts">
 import TodoCategory from '@/components/todo-category.vue'
-import CreateCategory from '@/components/create-category.vue'
+import TodoNavbar from '@/components/navbar.vue'
 </script>
 
 <template>
-  <nav class="navbar">
-    <div class="backToHomePage">
-      <button><RouterLink to="/">Back to Home Page</RouterLink></button>
+  <div class="container">
+    <TodoNavbar />
+    <h1 class="title">Todo-List📝</h1>
+    <div class="category-container">
+      <TodoCategory />
     </div>
-    <CreateCategory></CreateCategory>
-  </nav>
-  <h1>Todo-List</h1>
-  <div class="category">
-    <TodoCategory></TodoCategory>
   </div>
 </template>
 
 <style scoped>
-h1 {
+.container {
+  background-image: url('@/assets/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title {
   text-align: center;
+  font-size: 32px;
+  margin-top: 40px;
 }
 
-.category {
+.category-container {
   display: flex;
-  text-align: center;
-  justify-content: space-center;
-}
-
-.backToHomePage {
-  float: left;
-  justify-content: right;
-}
-
-.navbar {
-  display: flex;
-  float: right;
-  justify-self: start;
-  justify-content: right;
-  background: black;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
 }
 </style>
