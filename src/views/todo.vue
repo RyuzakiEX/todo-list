@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TodoCategory from '@/components/TodoCategory.vue'
-import CreateCategory from '@/components/CreateCategory.vue'
+import TodoCategory from '@/components/todo-category.vue'
+import CreateCategory from '@/components/create-category.vue'
 </script>
 
 <template>

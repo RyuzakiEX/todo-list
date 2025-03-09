@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useTodoStore } from '../stores/TodoStore'
-import TodoBlock from './TodoBlock.vue'
+import TodoBlock from './todo-block.vue'
 
 const store = useTodoStore()
 
