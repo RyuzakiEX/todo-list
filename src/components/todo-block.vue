@@ -38,14 +38,14 @@ function toEdit() {
 
 <style scoped>
 div {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-left: 2px;
 }
 .todo-block {
   display: flex;
   justify-content: space-between;
   min-width: 30vw;
-  min-height: 40px;
+  height: 33px;
 }
 
 .remove,
