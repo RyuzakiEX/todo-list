@@ -6,7 +6,7 @@ const store = useTodoStore()
 </script>
 
 <template>
-  <div v-for="category in store.categories" :key="category.name">
+  <div v-for="category in store.paginatedCategories" :key="category.name">
     <TodoList :category="category.name"></TodoList>
   </div>
 </template>
