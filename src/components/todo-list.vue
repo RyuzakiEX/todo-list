@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useTodoStore } from '../stores/TodoStore'
+import { useTodoStore } from '../stores/todo-store'
 import TodoBlock from './todo-block.vue'
 
 const store = useTodoStore()
@@ -19,8 +19,14 @@ function inputTodo() {
     <div>
       <h1>{{ category }}</h1>
       <form @submit.prevent="inputTodo">
-        <input v-model="newTodo" required placeholder="Enter To Do" />
-        <button>Add Todo</button>
+        <div class="add-input-container">
+          <div>
+            <input v-model="newTodo" required placeholder="Enter To Do" />
+          </div>
+          <div>
+            <button class="add-button"><span class="add-button-text">Enter</span></button>
+          </div>
+        </div>
       </form>
       <ul>
         <div v-for="todo in store.todos" :key="todo.id">
@@ -29,16 +35,64 @@ function inputTodo() {
           </li>
         </div>
       </ul>
-      <div>
-        <button @click="store.removeCategory(props.category)">Remove Category</button>
+      <div class="remove-btn-container">
+        <button class="remove-button" @click="store.removeCategory(props.category)">
+          Remove Category
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+input {
+  font-size: 1.2rem;
+  min-width: 25vw;
+  min-height: 40px;
+  border-radius: 12px;
+}
+
+.add-input-container {
+  display: flex;
+}
+
+.add-button {
+  font-size: 3rem;
+  float: right;
+  height: 40px;
+  min-width: 100px;
+  background: black;
+  font-size: x-small;
+  margin-right: 3px;
+  margin-top: 2px;
+  border-radius: 12px;
+}
+
+.remove-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.remove-button {
+  color: white;
+  font-size: 3rem;
+  float: right;
+  height: 40px;
+  min-width: 100px;
+  font-size: medium;
+  background-color: rgb(48, 45, 45);
+  margin-right: 3px;
+  margin-top: 2px;
+  border-radius: 12px;
+}
+
+.add-button-text {
+  font-size: 1.1rem;
+  color: white;
+}
+
 .container {
-  height: 100vh;
+  height: 500x;
   display: flex;
   justify-content: center;
   text-align: center;

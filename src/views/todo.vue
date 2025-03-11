@@ -15,11 +15,6 @@ import TodoNavbar from '@/components/navbar.vue'
 
 <style scoped>
 .container {
-  background-image: url('@/assets/background-image.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  padding: 20px;
   box-sizing: border-box;
 }
 
@@ -30,10 +25,10 @@ import TodoNavbar from '@/components/navbar.vue'
 }
 
 .category-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
   gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+  justify-items: center;
+  margin: 0 10px 0 10px;
 }
 </style>

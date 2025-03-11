@@ -7,7 +7,7 @@ import CreateCategory from '@/components/create-category.vue'
     <button class="back-button">
       <RouterLink to="/">Back to Home Page</RouterLink>
     </button>
-    <slot><CreateCategory /></slot>
+    <CreateCategory />
   </nav>
 </template>
 
@@ -18,7 +18,6 @@ import CreateCategory from '@/components/create-category.vue'
   align-items: center;
   background: rgba(0, 0, 0, 0.7);
   padding: 15px 30px;
-  border-radius: 10px;
 }
 
 .back-button {

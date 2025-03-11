@@ -1,10 +1,6 @@
 import { defineStore } from 'pinia'
 import { type Todo } from '../types'
 
-//state = ref/data
-//getter = computed
-//action = methods
-
 let id = 0
 
 export const useTodoStore = defineStore('todoStore', {
@@ -19,8 +15,26 @@ export const useTodoStore = defineStore('todoStore', {
     ],
     categories: [{ name: 'Chores' }, { name: 'Gaming' }]
   }),
+
   actions: {
     addTodo(newTodo: string, category: string) {
+      // Check if the category exists
+      const categoryExists = this.categories.some((c) => c.name === category)
+      if (!categoryExists) {
+        alert(`Category "${category}" does not exist.`)
+        return
+      }
+
+      // Count the number of todos in the given category
+      const todosInCategory = this.todos.filter((todo) => todo.category === category)
+
+      // If there are already 10 items in the category, prevent adding more
+      if (todosInCategory.length >= 10) {
+        alert(`You cannot add more than 10 todos in the "${category}" category.`)
+        return
+      }
+
+      // Add the new todo
       this.todos.push({ id: id++, text: newTodo, category: category })
     },
 

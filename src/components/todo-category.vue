@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import TodoList from './todo-list.vue'
-import { useTodoStore } from '@/stores/TodoStore'
+import { useTodoStore } from '@/stores/todo-store'
 
 const store = useTodoStore()
 </script>
@@ -11,8 +11,4 @@ const store = useTodoStore()
   </div>
 </template>
 
-<style scoped>
-div {
-  display: flex;
-}
-</style>
+<style scoped></style>
