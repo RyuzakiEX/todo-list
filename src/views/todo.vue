@@ -57,7 +57,6 @@ const store = useTodoStore()
   font-size: 32px;
 }
 
-/* ======= Smooth Page Transition ======= */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
@@ -68,11 +67,10 @@ const store = useTodoStore()
   opacity: 0;
 }
 
-/* ======= Category Grid ======= */
 .category-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
   justify-items: center;
   margin: 0 10px 0 10px;
 }

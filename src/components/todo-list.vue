@@ -114,7 +114,6 @@ ul {
 li {
   text-align: left;
   margin: 5px 0 5px 0;
-  border: 2px solid black;
   border-radius: 10px;
   padding: 0px 0px 0px 2px;
 }
