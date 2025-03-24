@@ -29,7 +29,7 @@ function inputTodo() {
         </div>
       </form>
       <ul>
-        <div v-for="todo in store.todos" :key="todo.id">
+        <div class="todo-block-container" v-for="todo in store.todos" :key="todo.id">
           <li v-if="todo.category === props.category">
             <TodoBlock :todo="todo"></TodoBlock>
           </li>
@@ -50,6 +50,20 @@ input {
   min-width: 25vw;
   min-height: 40px;
   border-radius: 12px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+
+li {
+  text-align: left;
+  margin: 5px 0 5px 0;
+  border-radius: 10px;
+  padding: 0px 0px 0px 2px;
 }
 
 .add-input-container {
@@ -104,17 +118,7 @@ input {
   margin: auto;
 }
 
-ul {
-  list-style-type: none;
-  padding-left: 0px;
-  padding-right: 10px;
-  margin-top: 10px;
-}
-
-li {
-  text-align: left;
-  margin: 5px 0 5px 0;
-  border-radius: 10px;
-  padding: 0px 0px 0px 2px;
+.todo-block-container {
+  max-height: max-content;
 }
 </style>

@@ -50,7 +50,7 @@ const textClass = computed(() => {
   justify-content: space-between;
   align-items: center;
   min-width: 300px;
-  height: 60px;
+  max-width: 500px;
   margin: 10px 0;
   background-color: #f9f9f9;
   border-radius: 8px;
